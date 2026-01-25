@@ -1,0 +1,47 @@
+/* Research Page Styles */
+
+.research-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+}
+
+.research-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Research Projects Grid */
+.research-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.project {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.project p {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #333;
+}

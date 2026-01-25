@@ -1,0 +1,86 @@
+<div class="research-content">
+    <h2>Research interests</h2>
+    <p>Our research focuses on uncovering the statistical properties and organizational principles of brain tissue microstructures, primarily acquired using large-scale electron microscopy, that are fundamental to understanding their macroscopic diffusion MR signals.
+    By identifying these properties, we aim to discover quantitative markers that can facilitate the early diagnosis of neurological disorders.</p>
+
+    <p>Our approach involves both theoretical advancements and the design and development of computational tools to model and analyze these microstructures.</p>
+
+    <h2>Key questions guiding our work</h2>
+    <ul>
+        <li>What are the underlying rules governing the organization of tissue microstructure?</li>
+        <li>Which structural properties of brain tissue are conserved and contribute to the diffusion signal?</li>
+        <li>How do neurological disorders alter the microgeometry of brain tissue?</li>
+    </ul>
+
+    <h2>Selected projects</h2>
+<div style="margin-top: -1rem;"></div>
+
+<div class="research-gallery">
+  
+  <div class="project">
+    <div class="project-text">
+      <p><strong>Scattering approach to diffusion</strong> provides an analytical framework that links axonal microgeometry to macroscopic diffusion MRI signals. Our approach establishes a principled bridge between tissue microstructure and measurable diffusion parameters.</p>
+    </div>
+    <div class="project-image">
+      <img src="/images/proj/feynman.jpeg" alt="diffusion"> 
+    </div>
+  </div>
+  
+  <div class="project">
+    <div class="project-text">
+      <p><strong>ACSON</strong> is an automated pipeline for 3D segmentation and morphometric analysis of white matter ultrastructure in large-scale electron microscopy data. It overcomes the limitations of 2D cross-sectional analysis by enabling full 3D quantification of axonal morphology. The pipeline segments key ultrastructural components—including myelinated axons, myelin, mitochondria, cells, and vacuoles—eliminating the need for manual annotation and enabling large-scale, high-throughput structural analysis.</p>
+    </div>
+    <div class="project-image">
+      <img src="/images/proj/acson.png" alt="acson"> 
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-text">
+      <p><strong>DeepACSON</strong> is a deep learning–based pipeline for semantic and instance segmentation of large, low-resolution 3D-EM volumes. It combines CNN-based semantic segmentation with a tubularity-aware decomposition strategy to resolve under-segmented myelinated axons. Applied to low-resolution 3D-EM datasets, DeepACSON segmented hundreds of thousands of axons, nuclei, and millions of mitochondria, enabling high-throughput morphometric analysis and detection of nanoscopic white matter alterations in a rat model of brain injury.</p>
+    </div>
+    <div class="project-image">
+      <img src="/images/proj/deepacson.png" alt="deepacson">
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-text">
+      <p><strong>gACSON</strong> is a MATLAB-based graphical interface for automated segmentation and morphometric analysis of myelinated axons in large 3D-EM brain datasets. Building on ACSON and DeepACSON, it integrates additional algorithms for unsupervised segmentation of myelin and intra-axonal space, requiring no manual annotations. gACSON offers interactive tools for reviewing, correcting, and selectively processing axons, along with instance-level myelin-to-axon mapping, enabling dynamic editing operations such as merge and split.</p>
+    </div>
+    <div class="project-image">
+      <img src="/images/proj/gacson.png" alt="gacson">
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-text">
+      <p><strong>Segmentation and morphometry of paranodes and juxtaparanodes:</strong> On fluorescence images, we enhance curvilinear structures by computing the eigenvalues of the Hessian matrix at multiple scales and evaluating a functional that favors elongated, tube-like geometries while suppressing others. Applied an active surface model on the curvilinear-enhanced image, enabling topology-adaptive contour evolution. We detect the principal orientation of components and projected all components onto the principal axis to select paranoeds. We are enabled then to apply morphology analysis on paranodes and juxtaparanodes</p>
+    </div>
+    <div class="project-image">
+      <img src="/images/proj/nodes.png" alt="nodes">
+    </div>
+  </div>
+
+<div class="project">
+    <div class="project-text">
+      <p><strong>Cylindrical shape decomposition</strong> is a skeleton-based algorithm for decomposing complex tubular objects into semantic components. It partitions the curve skeleton into maximal-length sub-skeletons based on an orientation cost, and identifies critical points by sweeping the object to detect geometric transitions. Components are segmented by cutting at these points and assigning labels along each sub-skeleton. The method reconstructs intersecting regions using generalized cylinders, enabling robust decomposition of tubular objects, such as axons, vascular networks, and synthetic structures—even under high surface noise—outperforming existing approaches in segmentation accuracy and structural fidelity.</p>
+    </div>
+    <div class="project-image">
+      <img src="/images/proj/csd.png" alt="csd">
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-text">
+      <p><strong>Minimal path problem:</strong> Given two key points on tips on a tubular shape, e.g. an axon, the centerline is extracted by solving a minimal path problem. This involves computing a geodesic—i.e., a path of minimal energy—between the two points in the image domain. The energy functional is designed to follow image features such as intensity ridges while incorporating curvature regularization to encourage smooth, biologically plausible paths. This helps prevent shortcuts across low-energy regions and ensures the computed trajectory adheres to the natural curvature of the axon.</p>
+    </div>
+    <div class="project-image">
+      <img src="/images/proj/min_path.png" alt="min_path">
+    </div>
+  </div>
+
+</div>    
+       
+        
+</div>

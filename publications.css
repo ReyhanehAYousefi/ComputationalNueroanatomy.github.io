@@ -1,0 +1,31 @@
+/* Publications Page Styles */
+
+.publications-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+}
+
+.publication-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.publication-list li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 4px solid #007bff;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.publication-list li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.publication-list li a:hover {
+    text-decoration: underline;
+}

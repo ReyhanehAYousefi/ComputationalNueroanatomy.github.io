@@ -1,0 +1,42 @@
+
+/* Team Page Styles */
+
+.team-member {
+    display: flex;
+    align-items: flex-start; /* Aligns photo and text */
+    margin-bottom: 2rem;
+    width: 80%;
+}
+
+.team-photo {
+    width: 100px; /* Adjust the size */
+    height: auto;
+    border-radius: 0%; /* Rectangular shape */
+    margin-right: 2rem;
+    margin-left: 0rem;
+}
+
+.team-text p {
+    line-height: 1.1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .team-member {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .team-photo {
+        width: 100px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-photo {
+        width: 80px;
+    }
+}
+
