@@ -1,487 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Computational Neuroanatomy Lab
-  </title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
-  <style>
-   html, body {
-            font-family: 'Khmer MN', serif;
-            background-color: #ffffff;
-            color: #343a40;
-            height: 100%;
-    	    margin: 0;
-             display: flex;
-             flex-direction: column;		
-            }
-        
-        header {
-            display: flex;
-            align-items: center; /* Vertically centers the logo */
-            justify-content: center;
-            background-color: #e6e9e9ff; /* headre color */
-            color: #222d2e;
-            padding: 1rem 0;
-            position: relative;
-            height: 130px; /* Adjust height if necessary */
-        }
-        
-        .container {
-            min-height: 100vh; /* Ensures the content takes at least the full viewport height */
-            display: flex;
-            flex-direction: column;
-        }
-
-	.content {
-	    flex: 1; /* Pushes the footer down */
-	}
-
-        .logo {
-            margin-right: 20px; /* Space between the logo and the text */
-            width: 117px; /* Adjust size */
-            height: auto;
-        }
-
-        .header-text {
-    	    text-align: center;
-            font-family: "Georgia", serif; /* Default for all text */
-        }
-
-        .header-text h1 {
-            font-family: "Khmer MN", serif; !important;
-            font-size: 2.5rem;
-        }
-
-        /* Responsive adjustments */
-       @media (max-width: 768px) {
-        .header-text h1 {
-            font-size: 1.8rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-        .header-text h1 {
-            font-size: 1.5rem;
-            }
-        }
-        
-        nav {
-            background-color: #bac3c4ff;
-            padding: 0.5rem 0;
-            text-align: center;
-        }
-        
-        nav a {
-            color: #222d2e; !important;
-            margin: 0 1rem;
-            text-decoration: none;
-            font-weight: lighter;
-            font-size: 1rem;
-            cursor: pointer;
-            font-family: 'Roboto', Tahoma, Arial, sans-serif;
-        }
-        
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .home-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center; /* Align items to the top */
-                text-align: left; /* Ensure text stays aligned left */
-        }
-            
-        .home-text {
-                margin-left: 0rem; /* Adds space between the text and the image */
-                width: 60%; /* Adjust the width as needed to control text width */
-        }
-
-        .home-image {
-                display: flex;
-                justify-content: center; /* Center image horizontally */
-        }
-
-        .home-image img {
-                width: 100vw; /* Make the image span the full viewport width */
-                object-fit: cover; /* Ensures the image covers the entire space without distortion */
-                display: block; /* Removes unwanted extra spaces */
-                margin: 0 auto; /* Centers the image */
-                margin-top: -1.5rem;
-                margin-bottom: 2rem; /* Add distance below the image */
-        }
-
-        .home-aka img {
-            display: flex;
-            margin-top: -1rem;
-            margin-left: -2rem;
-            max-width: 60%; /* Makes the image responsive */
-                height: auto; /* Maintains the image's aspect ratio */
-        }
-
-       	.section {
-            display: none;
-	    display: none;
-            padding: 2rem; /* Add padding to ensure content does not touch the edges */
-            max-width: 90%; /* Adjust the max-width as needed */
-            margin: 0 auto; /* Center the section horizontally */
-            text-align: left; /* Align text to the left */
-        }
-        .section.active {
-            display: block;
-        }
-
-        .section h2 {
-                margin-bottom: 1rem; /* Space below headings */
-        }
-
-        /* Optional: adjust padding and margin of content elements */
-        .section p {
-                margin-bottom: 1rem; /* Space between paragraphs */
-        }
-
-        footer {
-            background-color: #222d2e;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            width: 100%;
-	    /* position: relative; */
-        }
-        
-        /* General responsive layout */
-        body {
-            font-size: 16px;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .header-text h1 {
-            font-size: 2rem;
-        }
-
-        /* For screens larger than 1200px */
-        @media (min-width: 1200px) {
-            .home-text {
-                margin-left: -15rem;
-                width: 40%;
-            }
-        }
-
-        /* For tablets and smaller laptops (between 768px and 1200px) */
-        @media (max-width: 1200px) {
-            .home-text {
-                margin-left: -5rem;
-                width: 60%;
-            }
-
-            .header-text h1 {
-                font-size: 2rem;
-            }
-
-            nav a {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* For mobile devices (max-width: 768px) */
-        @media (max-width: 768px) {
-            .home-text {
-                width: 90%; /* Use most of the available screen width */
-                margin-left: 0;
-            }
-
-            .home-image img {
-                max-width: 80%; /* Make the image fit better on mobile */
-                margin: 0 auto;
-            }
-
-            .header-text h1 {
-                font-size: 1.8rem;
-            }
-
-            .team-photo {
-                width: 70px; /* Smaller team member images for mobile */
-                margin-left: 1rem;
-            }
-
-            .home-aka img {
-                margin-left: 0;
-                max-width: 100%;
-            }
-
-            /* Adjust the nav links for smaller screens */
-            nav {
-                flex-direction: column;
-            }
-
-            nav a {
-                margin: 0.5rem 0;
-                font-size: 1rem;
-            }
-        }
-        
-        .research-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-}
-
-.project {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fafafa;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    gap: 20px;
-}
-
-.project-text {
-    flex: 1;
-    font-size: 0.95rem;
-    color: #333;
-    text-align: left;
-}
-
-.project-image img {
-    width: auto;
-    height: 120px;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
-/* Responsive stacking on small screens */
-@media (max-width: 768px) {
-    .project {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .project-text {
-        text-align: center;
-    }
-
-    .project-image img {
-        width: 100%;
-        max-width: 250px;
-        height: auto;
-    }
-}
-
-        /* Extra small devices like phones (max-width: 480px) */
-        @media (max-width: 480px) {
-            .header-text h1 {
-                font-size: 1.5rem;
-            }
-
-            .home-text {
-                width: 95%;
-            }
-
-            nav a {
-                font-size: 0.8rem;
-            }
-
-            footer {
-                padding: 0.5rem;
-            }
-        }
-  </style>
+  <meta name="description" content="Computational Neuroanatomy Lab, led by Dr. Ali Abdollahzadeh at the A.I. Virtanen Institute, University of Eastern Finland — advancing brain microstructure mapping from electron microscopy to diffusion MRI."/>
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+  <meta name="theme-color" content="#13181a" media="(prefers-color-scheme: dark)"/>
+  <title>Computational Neuroanatomy Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="preload" as="image" href="images/header.jpg"/>
+  <link href="theme.css" rel="stylesheet"/>
+  <script src="theme.js"></script>
   <script>
-   function showTab(tabId) {
-            var sections = document.getElementsByClassName('section');
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].classList.remove('active');
-            }
-            document.getElementById(tabId).classList.add('active');
+    // ---- Routing: maps clean URLs (/team, /research, ...) to sections ----
+    var ROUTES = {
+        '/': 'home', '/team': 'team', '/research': 'research',
+        '/publications': 'publications', '/resources': 'resources', '/contact': 'contact'
+    };
+    var TAB_PATH = {
+        home: '/', team: '/team', research: '/research',
+        publications: '/publications', resources: '/resources', contact: '/contact'
+    };
+
+    function tabFromPath(path) {
+        path = (path || '/').replace(/\/+$/, '') || '/';
+        return ROUTES[path] || 'home';
+    }
+
+    function setActiveLink(tab) {
+        var links = document.querySelectorAll('.nav-links a');
+        for (var i = 0; i < links.length; i++) {
+            var on = links[i].getAttribute('data-tab') === tab;
+            links[i].classList.toggle('active', on);
+            if (on) { links[i].setAttribute('aria-current', 'page'); }
+            else { links[i].removeAttribute('aria-current'); }
         }
+    }
 
-        // Function to load external content into the Publications, Team, and Research sections
-        function loadContent() {
-            fetch('publications.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok ' + response.statusText);
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('publications').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Failed to load content:', error);
-                });
+    // Links carry real hrefs (shareable, keyboard- and screen-reader-friendly).
+    // Intercept plain left-clicks for in-page SPA nav, but let modified clicks
+    // (cmd/ctrl/shift/middle) fall through so "open in new tab" still works.
+    function go(e, tab) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) { return true; }
+        e.preventDefault();
+        navigate(tab, true);
+        return false;
+    }
 
+    function scrollToContent() {
+        var el = document.querySelector('#home .home-inner');
+        if (el) { el.scrollIntoView({ behavior: 'smooth' }); }
+    }
 
-            fetch('team_members.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok ' + response.statusText);
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('team').innerHTML += data;
-                })
-                .catch(error => {
-                    console.error('Failed to load content:', error);
-                });
+    function showTab(tab) {
+        var sections = document.getElementsByClassName('section');
+        for (var i = 0; i < sections.length; i++) { sections[i].classList.remove('active'); }
+        var target = document.getElementById(tab) || document.getElementById('home');
+        target.classList.add('active');
+        setActiveLink(tab);
+        setMenu(false);
+        window.scrollTo({ top: 0, behavior: 'auto' });
+    }
 
-            fetch('research.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok ' + response.statusText);
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('research').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Failed to load content:', error);
-                });
+    function navigate(tab, push) {
+        if (!TAB_PATH[tab]) { tab = 'home'; }
+        // pushState can throw on file:// — never let that block navigation.
+        if (push) { try { history.pushState({ tab: tab }, '', TAB_PATH[tab]); } catch (e) {} }
+        showTab(tab);
+    }
 
-
-            fetch('resources.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok ' + response.statusText);
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('resources').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Failed to load content:', error);
-                });
-
+    function setMenu(open) {
+        var nav = document.getElementById('navbar');
+        var btn = nav.querySelector('.nav-toggle');
+        nav.classList.toggle('open', open);
+        if (btn) {
+            btn.innerHTML = open
+                ? '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>'
+                : '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
         }
+    }
 
-        // Show the "Home" tab by default when the page loads
-        window.onload = function() {
-            showTab('home');
-            loadContent(); // Load external content when the page loads
-        }
+    function toggleNav() {
+        setMenu(!document.getElementById('navbar').classList.contains('open'));
+    }
+
+    window.addEventListener('popstate', function () {
+        showTab(tabFromPath(location.pathname));
+    });
+
+    window.onload = function () {
+        // Restore a deep link that came through the 404.html fallback.
+        var redirect = null;
+        try { redirect = sessionStorage.getItem('spa-redirect'); } catch (e) {}
+        var path = location.pathname;
+        if (redirect) { try { sessionStorage.removeItem('spa-redirect'); } catch (e) {} path = redirect; }
+
+        var tab = tabFromPath(path);
+        try { history.replaceState({ tab: tab }, '', TAB_PATH[tab]); } catch (e) {}
+        showTab(tab);
+    };
   </script>
- </head>
- <body>
-  <header>
-   <img alt="Lab Logo" class="logo" src="images/logo.png?v=2"/>
-   <div class="header-text">
-    <h1>
-     Computational Neuroanatomy Lab
-    </h1>
-    <p>
-     Advancing Brain Microstructure Mapping
-    </p>
-   </div>
-  </header>
-  <nav>
-   <a onclick="showTab('home')">
-    HOME
-   </a>
-   <a onclick="showTab('team')">
-    TEAM
-   </a>
-   <a onclick="showTab('research')">
-    RESEARCH
-   </a>
-   <a onclick="showTab('publications')">
-    PUBLICATIONS
-   </a>
-   <a onclick="showTab('resources')">
-    RESOURCES
-   </a>
-   <a onclick="showTab('contact')">
-    CONTACT
-   </a>
-  </nav>
-  <div class="content">
-   <div class="section active" id="home">
-    <div class="home-content">
-     <div class="home-image">
-      <img alt="EM Seg" src="images/header.jpg">
-      </img>
-     </div>
-     <div class="home-text">
-      <p>
-       <b> Computational Neuroanatomy Lab </b>, led by Dr. Ali Abdollahzadeh, is affiliated with the A.I. Virtanen Institute for Molecular Sciences at the University of Eastern Finland.
-       <br/>
-       We seek to understand the statistical properties and organizational principles of brain tissue microstructures fundamental to understanding the macroscopic diffusion MRI signal—spanning across two to three orders of magnitude in spatial resolution.       
-       <br/>
-       We recently developed the <b>scattering framework</b> for diffusion in a tube with varying cross-sectional area and uncovered the relevant parameters that govern the diffusive dynamics of water in axons with Prof. Novikov.
-       <br/>
-         To support this effort, we have introduced a family of computational tools that bridge microgeometry and diffusion: <b>Scattering to Diffusion</b> for linking structure to signal, and <b>ACSON</b>, <b>DeepACSON</b>, <b>gACSON</b>, and <b>Skeletonize</b> for segmentation and morphological analysis of large-scale electron microscopy volumes.
-          These developments have enabled realistic reconstructions of white matter microgeometry and its quantitative connection to diffusion MRI, supported by our publicly available datasets and tools.      
-          </p>
-      
-      <h3>
-       Funding
-      </h3>
-      <!-- Added header here -->
-      <p>
-       Research Council of Finland
-       <p>
-        <div class="home-aka">
-         <img alt="AKA" src="images/AKA.jpg"/>
-        </div>
-       </p>
-      </p>
-     </div>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="navbar" id="navbar">
+    <a class="brand" href="/" onclick="return go(event, 'home')">
+      <img class="brand-logo" src="images/logo.png?v=2" alt="Lab logo"/>
+      <span class="brand-name">Computational Neuroanatomy Lab</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a data-tab="home" href="/" onclick="return go(event, 'home')">Home</a>
+      <a data-tab="team" href="/team" onclick="return go(event, 'team')">Team</a>
+      <a data-tab="research" href="/research" onclick="return go(event, 'research')">Research</a>
+      <a data-tab="publications" href="/publications" onclick="return go(event, 'publications')">Publications</a>
+      <a data-tab="resources" href="/resources" onclick="return go(event, 'resources')">Resources</a>
+      <a data-tab="contact" href="/contact" onclick="return go(event, 'contact')">Contact</a>
     </div>
-   </div>
-   <div class="section" id="team">
-    <!-- h2>Meet the Team</h2 -->
-    <!-- External content will be loaded here -->
-   </div>
-   <div class="section" id="publications">
-    <h2>
-     Publications
-    </h2>
-    <!-- External content will be loaded here -->
-   </div>
-   <div class="section" id="research">
-    <h2>
-     Research
-    </h2>
-    <!-- External content will be loaded here -->
-   </div>
-   <div class="section" id="resources">
-    <h2>
-     Resources
-    </h2>
-    <!-- External content will be loaded here -->
-   </div>
-   <div class="section" id="contact">
-    <h2>
-     Contact
-    </h2>
-    <p>
-     Principal Investigator: Ali Abdollahzadeh, PhD
-     <br/>
-     Computational Neuroanatomy Lab
-     <br/>
-     University of Eastern Finland | UEF | A.I. Virtanen Institute for Molecular Sciences
-     <br/>
-     Neulaniementie 2 | P.O. Box 1627 | 70211 Kuopio | Finland
-     <br/>
-     Email: aliabd#uef.fi#
-    </p>
-   </div>
-  </div>
+    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+    <button class="nav-toggle" type="button" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+
+  <main class="content" id="main" tabindex="-1">
+
+    <!-- ============================== HOME ============================== -->
+    <div class="section active" id="home">
+      <div class="hero">
+        <div class="hero-content">
+          <p class="hero-eyebrow">A.I. Virtanen Institute · University of Eastern Finland</p>
+          <h1>Computational Neuroanatomy Lab</h1>
+          <p class="hero-tagline">Advancing Brain Microstructure Mapping</p>
+          <div class="btn-row">
+            <a class="btn" href="/research" onclick="return go(event, 'research')">Explore our research</a>
+            <a class="btn btn-ghost" href="/team" onclick="return go(event, 'team')">Meet the team</a>
+          </div>
+        </div>
+        <button class="hero-scroll" type="button" onclick="scrollToContent()" aria-label="Scroll to content">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </div>
+
+      <div class="home-inner">
+        <p class="lead">
+          <b>Computational Neuroanatomy Lab</b>, led by Dr. Ali Abdollahzadeh, is affiliated with the A.I. Virtanen Institute for Molecular Sciences at the University of Eastern Finland.
+          <br/>
+          We seek to understand the statistical properties and organizational principles of brain tissue microstructures fundamental to understanding the macroscopic diffusion MRI signal—spanning across two to three orders of magnitude in spatial resolution.
+          <br/>
+          We recently developed the <b>scattering framework</b> for diffusion in a tube with varying cross-sectional area and uncovered the relevant parameters that govern the diffusive dynamics of water in axons with Prof. Novikov.
+          <br/>
+          To support this effort, we have introduced a family of computational tools that bridge microgeometry and diffusion: <b>Scattering to Diffusion</b> for linking structure to signal, and <b>ACSON</b>, <b>DeepACSON</b>, <b>gACSON</b>, and <b>Skeletonize</b> for segmentation and morphological analysis of large-scale electron microscopy volumes.
+          These developments have enabled realistic reconstructions of white matter microgeometry and its quantitative connection to diffusion MRI, supported by our publicly available datasets and tools.
+        </p>
+
+        <h2>Funding</h2>
+        <p>Research Council of Finland</p>
+        <div class="home-aka">
+          <img alt="Research Council of Finland" src="images/AKA.jpg" loading="lazy" decoding="async"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================== TEAM ============================== -->
+    <div class="section" id="team">
+      <h2>Team</h2>
+
+      <div class="team-member">
+        <img src="images/ali-abdollahzadeh.jpg" alt="Ali Abdollahzadeh" class="team-photo circular" loading="lazy" decoding="async">
+        <div>
+          <h3><b>ALI ABDOLLAHZADEH, PhD</b></h3>
+          <p>Principal Investigator of Computational Neuroanatomy Lab</p>
+          <p>
+            I graduated from the Signal Processing department of Tampere University of Technology, Finland, in 2016 and completed my PhD with distinction in medical image processing at the A.I. Virtanen Institute of the University of Eastern Finland in 2021. <br/>
+            I have developed advanced computational tools for segmentation and morphology analysis of large electron and light microscopy datasets, particularly focusing on white matter. Notably, the analyzed datasets are one of the largest electron microscopy volumes of white matter publicly available to date.
+            Following my PhD, I continued for two years as a postdoctoral fellow with the MRI Biophysics Group at New York University School of Medicine, spearheaded by Profs. Dmitry S. Novikov and Els Fieremans. With Prof. Novikov, we developed a scattering approach that links axonal microgeometry to its diffusion signal, a breakthrough that spans 2-3 orders of magnitude in resolution.<br/>
+            In 2024, I was honored to receive a prestigious four-year grant from the Research Council of Finland to pursue my project on generating Synthetic Brain Tissue that mimics the properties of a biological tissue.
+          </p>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="images/reyhaneh-profile.png" alt="Aghayousefi" class="team-photo circular" loading="lazy" decoding="async">
+        <div>
+          <h3><b>Reyhaneh Aghayousefi, MSc</b></h3>
+          <p>Project Researcher</p>
+          <p>
+            Reyhaneh Aghayousefi received the B.Sc. degree in electrical engineering-control (EEC) from the University of Tehran, Tehran, Iran, in 2019, and the M.Sc. degree in EEC from the K. N. Toosi University of Technology, Tehran, Iran, in 2022. She has worked as a data science specialist with VR FleetCare, Helsinki, Finland, and as a computer vision specialist with Aalto University, Espoo, Finland. She is currently with the A. I. Virtanen Institute for Molecular Sciences, University of Eastern Finland, Kuopio, Finland. Her research interests include data fusion, machine learning, and deep neural networks for image and signal processing, with applications to healthcare, brain imaging, and human-centered AI aimed at improving quality of life.
+          </p>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="images/personx.png" alt="Jafarifard" class="team-photo" loading="lazy" decoding="async">
+        <div>
+          <h3><b>Soheil Jafarifard, MSc</b></h3>
+          <p>Project Researcher</p>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="images/personx.png" alt="S. Saravani" class="team-photo" loading="lazy" decoding="async">
+        <div>
+          <h3><b>Saeed Saravani, MSc</b></h3>
+          <p>Project Researcher</p>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="images/personx.png" alt="Aasiyah Syed Abdullah" class="team-photo" loading="lazy" decoding="async">
+        <div>
+          <h3><b>Aasiyah Syed Abdullah, BSc</b></h3>
+          <p>Intern</p>
+          <p>Whole Assembloids Image Analysis</p>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="images/personx.png" alt="Open position" class="team-photo" loading="lazy" decoding="async">
+        <div>
+          <h3>We are hiring!</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================== RESEARCH ============================== -->
+    <div class="section" id="research">
+      <div class="research-content">
+        <h2>Research interests</h2>
+        <p>Our research focuses on uncovering the statistical properties and organizational principles of brain tissue microstructures, primarily acquired using large-scale electron microscopy, that are fundamental to understanding their macroscopic diffusion MR signals.
+        By identifying these properties, we aim to discover quantitative markers that can facilitate the early diagnosis of neurological disorders.</p>
+
+        <p>Our approach involves both theoretical advancements and the design and development of computational tools to model and analyze these microstructures.</p>
+
+        <h2>Key questions guiding our work</h2>
+        <ul>
+          <li>What are the underlying rules governing the organization of tissue microstructure?</li>
+          <li>Which structural properties of brain tissue are conserved and contribute to the diffusion signal?</li>
+          <li>How do neurological disorders alter the microgeometry of brain tissue?</li>
+        </ul>
+
+        <h2>Selected projects</h2>
+
+        <div class="research-gallery">
+          <div class="project">
+            <div class="project-text">
+              <p><strong>Scattering approach to diffusion</strong> provides an analytical framework that links axonal microgeometry to macroscopic diffusion MRI signals. Our approach establishes a principled bridge between tissue microstructure and measurable diffusion parameters.</p>
+            </div>
+            <div class="project-image">
+              <img src="images/proj/feynman.jpeg" alt="diffusion" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-text">
+              <p><strong>ACSON</strong> is an automated pipeline for 3D segmentation and morphometric analysis of white matter ultrastructure in large-scale electron microscopy data. It overcomes the limitations of 2D cross-sectional analysis by enabling full 3D quantification of axonal morphology. The pipeline segments key ultrastructural components—including myelinated axons, myelin, mitochondria, cells, and vacuoles—eliminating the need for manual annotation and enabling large-scale, high-throughput structural analysis.</p>
+            </div>
+            <div class="project-image">
+              <img src="images/proj/acson.png" alt="acson" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-text">
+              <p><strong>DeepACSON</strong> is a deep learning–based pipeline for semantic and instance segmentation of large, low-resolution 3D-EM volumes. It combines CNN-based semantic segmentation with a tubularity-aware decomposition strategy to resolve under-segmented myelinated axons. Applied to low-resolution 3D-EM datasets, DeepACSON segmented hundreds of thousands of axons, nuclei, and millions of mitochondria, enabling high-throughput morphometric analysis and detection of nanoscopic white matter alterations in a rat model of brain injury.</p>
+            </div>
+            <div class="project-image">
+              <img src="images/proj/deepacson.png" alt="deepacson" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-text">
+              <p><strong>gACSON</strong> is a MATLAB-based graphical interface for automated segmentation and morphometric analysis of myelinated axons in large 3D-EM brain datasets. Building on ACSON and DeepACSON, it integrates additional algorithms for unsupervised segmentation of myelin and intra-axonal space, requiring no manual annotations. gACSON offers interactive tools for reviewing, correcting, and selectively processing axons, along with instance-level myelin-to-axon mapping, enabling dynamic editing operations such as merge and split.</p>
+            </div>
+            <div class="project-image">
+              <img src="images/proj/gacson.png" alt="gacson" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-text">
+              <p><strong>Segmentation and morphometry of paranodes and juxtaparanodes:</strong> On fluorescence images, we enhance curvilinear structures by computing the eigenvalues of the Hessian matrix at multiple scales and evaluating a functional that favors elongated, tube-like geometries while suppressing others. Applied an active surface model on the curvilinear-enhanced image, enabling topology-adaptive contour evolution. We detect the principal orientation of components and projected all components onto the principal axis to select paranoeds. We are enabled then to apply morphology analysis on paranodes and juxtaparanodes</p>
+            </div>
+            <div class="project-image">
+              <img src="images/proj/nodes.png" alt="nodes" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-text">
+              <p><strong>Cylindrical shape decomposition</strong> is a skeleton-based algorithm for decomposing complex tubular objects into semantic components. It partitions the curve skeleton into maximal-length sub-skeletons based on an orientation cost, and identifies critical points by sweeping the object to detect geometric transitions. Components are segmented by cutting at these points and assigning labels along each sub-skeleton. The method reconstructs intersecting regions using generalized cylinders, enabling robust decomposition of tubular objects, such as axons, vascular networks, and synthetic structures—even under high surface noise—outperforming existing approaches in segmentation accuracy and structural fidelity.</p>
+            </div>
+            <div class="project-image">
+              <img src="images/proj/csd.png" alt="csd" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-text">
+              <p><strong>Minimal path problem:</strong> Given two key points on tips on a tubular shape, e.g. an axon, the centerline is extracted by solving a minimal path problem. This involves computing a geodesic—i.e., a path of minimal energy—between the two points in the image domain. The energy functional is designed to follow image features such as intensity ridges while incorporating curvature regularization to encourage smooth, biologically plausible paths. This helps prevent shortcuts across low-energy regions and ensures the computed trajectory adheres to the natural curvature of the axon.</p>
+            </div>
+            <div class="project-image">
+              <img src="images/proj/min_path.png" alt="min_path" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================== PUBLICATIONS ============================== -->
+    <div class="section" id="publications">
+      <div id="publications-content">
+        <h2>Selected publications</h2>
+        <ul>
+          <li><b>A. Abdollahzadeh</b>, R. Coronado-Leija, HH. Lee, A. Sierra, E. Fieremans, DS. Novikov, “<a href="https://doi.org/10.1038/s41467-025-64793-1" target="_blank" rel="noopener">Scattering approach to diffusion quantifies axonal damage in brain injury</a>,” Nature Communications, vol. 16, 2025</li>
+          <li><b>A. Abdollahzadeh</b>, I. Belevich, E. Jokitalo, A. Sierra, and J. Tohka, “<a href="https://doi.org/10.1038/s42003-021-01699-w" target="_blank" rel="noopener">DeepACSON automated segmentation of white matter in 3D electron microscopy</a>,” Communications Biology, vol. 4, 2021</li>
+          <li><b>A. Abdollahzadeh</b>, I. Belevich, E. Jokitalo, J. Tohka, and A. Sierra, “<a href="https://doi.org/10.1038/s41598-019-42648-2" target="_blank" rel="noopener">Automated 3D Axonal Morphometry of White Matter</a>,” Scientific Reports, vol. 9, 2019</li>
+          <li><b>A. Abdollahzadeh</b>, A. Sierra, and J. Tohka, “<a href="https://doi.org/10.1109/ACCESS.2021.3056958" target="_blank" rel="noopener">Cylindrical Shape Decomposition for 3D Segmentation of Tubular Objects</a>,” IEEE Access, vol. 9, 2021</li>
+          <li><b>A. Abdollahzadeh</b>, R. Coronado-Leija, S. Mehrin, H.-H. Lee, E. Fieremans, and DS. Novikov, “Quantifying changes of axonal shape in traumatic brain injury with time-dependent diffusion,” ISMRM, Singapore, 2024</li>
+          <li><b>A. Abdollahzadeh</b>, R. Coronado-Leija, E. Chasen, and E. Novikov DS. Fieremans, “Sensitivity of quantitative MRI to demyelination and axonal loss: validation against myelinated and unmyelinated axons from histology,” ISMRM Singapore, 2024</li>
+          <li>A. Behanova, <b>A. Abdollahzadeh</b>, I. Belevich, E. Jokitalo, A. Sierra, and J. Tohka, “<a href="https://doi.org/10.1016/j.cmpb.2022.106802" target="_blank" rel="noopener">gACSON software for automated segmentation and morphology analyses of myelinated axons in 3D electron microscopy</a>,” Computer Methods and Programs in Biomedicine, vol. 220, 2022</li>
+          <li>R. Coronado-Leija, <b>A. Abdollahzadeh</b>, H.-H. Lee, S. Coelho, B. Ades-Aron, Y. Liao, R. Salo, J. Tohka, A. Sierra, N. DS., and E. Fieremans, “<a href="https://doi.org/10.1162/imag_a_00212" target="_blank" rel="noopener">Volume electron microscopy in injured rat brain validates white matter microstructure metrics from diffusion MRI</a>,” Imaging Neuroscience, vol. 2, 2024</li>
+          <li>M.-K. Koskinen, M. Laine, <b>A. Abdollahzadeh</b>, et al., “<a href="https://doi.org/10.1038/s41386-023-01568-6" target="_blank" rel="noopener">Node of Ranvier remodeling in chronic psychosocial stress and anxiety</a>,” Neuropsychopharmacology, 2023</li>
+        </ul>
+      </div>
+
+      <div class="google-scholar-link">
+        <a href="https://scholar.google.com/citations?hl=en&user=TEotqtIAAAAJ&view_op=list_works" target="_blank" rel="noopener">
+          <img src="images/google-scholar.jpg" alt="Google Scholar" loading="lazy" decoding="async">
+        </a>
+      </div>
+    </div>
+
+    <!-- ============================== RESOURCES ============================== -->
+    <div class="section" id="resources">
+      <div class="resource-content">
+        <h2>Resources</h2>
+        <p>Our group is committed to contributing developed software and acquired datasets to the scientific community by making it freely available on Github, open source projects, and open data repositories.</p>
+
+        <h2>Software</h2>
+        <ul>
+          <li><b><a href="https://github.com/aAbdz/scattering-to-diffusion" target="_blank" rel="noopener">Scattering to diffusion</a></b> A scattering framework for linking axonal microgeometry to diffusion signal.</li>
+          <li><b><a href="https://github.com/aAbdz/ACSON" target="_blank" rel="noopener">ACSON</a>:</b> A segmentation pipeline of white matter in electron microscopy images.</li>
+          <li><b><a href="https://github.com/aAbdz/DeepACSON" target="_blank" rel="noopener">DeepACSON</a>:</b> Deep learning-based segmentation of white matter in electron microscopy images.</li>
+          <li><b><a href="https://github.com/Andrea-Behanova/gACSON" target="_blank" rel="noopener">gACSON</a>:</b> (developed with Andrea Behanova) A graphical user interface-based software for the segmentation of white matter in electron microscopy images.</li>
+          <li><b><a href="https://github.com/aAbdz/skeletonize" target="_blank" rel="noopener">Skeletonize</a>:</b> A Python-based 3D skeletonization algorithm for 3D objects.</li>
+          <li><b><a href="https://github.com/mbbio/SproutAngio" target="_blank" rel="noopener">SproutAngio</a>:</b> (developed with Mustafa Beter) An Open-Source Bioimage Informatics Tool for Quantitative Analysis of Sprouting Angiogenesis and Lumen Space.</li>
+        </ul>
+
+        <h2>Open datasets</h2>
+        <ul>
+          <li><a href="https://etsin.fairdata.fi/dataset/7ab3737d-0884-400e-ab57-657e3667d52b" target="_blank" rel="noopener">Scattering approach to diffusion: Ex-vivo diffusion MRI and cross-sectional geometry of axons in a rat model of traumatic brain injury</a></li>
+          <li><a href="https://doi.org/10.23729/bad417ca-553f-4fa6-ae0a-22eddd29a230" target="_blank" rel="noopener">Segmentation of tissue microstructure in 3D <b>high-resolution</b> electron microscopy datasets of <b>white matter</b></a></li>
+          <li><a href="https://doi.org/10.23729/bad417ca-553f-4fa6-ae0a-22eddd29a230" target="_blank" rel="noopener">Segmentation of tissue microstructure in 3D <b>low-resolution</b> electron microscopy datasets of <b>white matter</b></a></li>
+          <li><a href="https://doi.org/10.23729/bad417ca-553f-4fa6-ae0a-22eddd29a230" target="_blank" rel="noopener">Segmentation of tissue microstructure in 3D <b>high-resolution</b> electron microscopy datasets of <b>gray matter</b></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============================== CONTACT ============================== -->
+    <div class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="contact-card">
+        Principal Investigator: Ali Abdollahzadeh, PhD
+        <br/>
+        Computational Neuroanatomy Lab
+        <br/>
+        University of Eastern Finland | UEF | A.I. Virtanen Institute for Molecular Sciences
+        <br/>
+        Neulaniementie 2 | P.O. Box 1627 | 70211 Kuopio | Finland
+        <br/>
+        Email: <a href="mailto:aliabd@uef.fi">aliabd@uef.fi</a>
+      </div>
+    </div>
+
+  </main>
+
   <footer>
-   <p>
-    © 2024 Computational Neuroanatomy Lab | All rights reserved.
-   </p>
+    <div class="footer-inner">
+      <p class="footer-name">Computational Neuroanatomy Lab</p>
+      <p class="footer-meta">A.I. Virtanen Institute for Molecular Sciences · University of Eastern Finland · Kuopio, Finland</p>
+      <p class="footer-copy">© 2024 Computational Neuroanatomy Lab · All rights reserved.</p>
+    </div>
   </footer>
- </body>
+</body>
 </html>

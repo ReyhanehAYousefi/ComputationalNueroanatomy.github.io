@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Computational Neuroanatomy Lab</title>
+  <script>
+    // GitHub Pages serves this file for unknown paths (e.g. /team).
+    // Remember where the visitor wanted to go, then hand control back to
+    // index.html, which restores the correct section via the History API.
+    try {
+      sessionStorage.setItem('spa-redirect', location.pathname + location.search + location.hash);
+    } catch (e) {}
+    location.replace('/');
+  </script>
+</head>
+<body></body>
+</html>

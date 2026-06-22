@@ -15,14 +15,14 @@
 .publication-list li {
     margin-bottom: 15px;
     padding: 10px;
-    border-left: 4px solid #007bff;
-    background: #f8f9fa;
+    border-left: 4px solid var(--accent);
+    background: var(--card-bg);
     border-radius: 5px;
 }
 
 .publication-list li a {
     text-decoration: none;
-    color: #007bff;
+    color: var(--accent);
     font-weight: bold;
 }
 
